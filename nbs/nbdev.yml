@@ -2,7 +2,7 @@ project:
   output-dir: _docs
 
 website:
-  title: "Health Kowshik"
+  title: "healthkowshik"
   site-url: "https://healthkowshik.github.io/healthkowshik.github.io"
   description: "Journey of Health Kowshik"
   repo-branch: main
