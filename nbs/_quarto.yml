@@ -10,12 +10,22 @@ format:
   commonmark: default
 
 website:
+  title: "Health Kowshik"
   twitter-card: true
   open-graph: true
   repo-actions: [issue]
   navbar:
     background: primary
     search: true
+    left:
+      - text: "Home"
+        href: index.ipynb
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "TIL"
+        href: til/index.qmd
+      - text: "Wiki"
+        href: wiki/index.qmd
   sidebar:
     style: floating
 

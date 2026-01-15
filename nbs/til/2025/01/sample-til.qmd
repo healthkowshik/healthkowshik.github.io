@@ -1,0 +1,14 @@
+---
+title: "Sample TIL Entry"
+date: "2025-01-15"
+categories: [python]
+---
+
+## The Learning
+
+This is a sample TIL entry. Replace this with your actual learnings.
+
+```python
+# Example code snippet
+print("Hello, World!")
+```

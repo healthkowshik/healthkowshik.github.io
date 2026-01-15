@@ -1,0 +1,12 @@
+---
+title: "Welcome to My Blog"
+author: "Health Kowshik"
+date: "2025-01-15"
+categories: [news]
+---
+
+This is my first blog post. Welcome!
+
+## What to Expect
+
+I'll be sharing updates on projects, learnings, and thoughts here.

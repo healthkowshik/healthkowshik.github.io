@@ -1,0 +1,13 @@
+---
+title: "Today I Learned"
+listing:
+  contents:
+    - "**/*.qmd"
+    - "**/*.ipynb"
+    - "!index.qmd"
+  sort: "date desc"
+  type: table
+  fields: [date, title, categories]
+---
+
+Short notes on things I learn day to day.
