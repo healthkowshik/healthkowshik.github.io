@@ -1,0 +1,101 @@
+[
+  {
+    "objectID": "blog/posts/2025/01/welcome/index.html",
+    "href": "blog/posts/2025/01/welcome/index.html",
+    "title": "Welcome to My Blog",
+    "section": "",
+    "text": "This is my first blog post. Welcome!"
+  },
+  {
+    "objectID": "blog/posts/2025/01/welcome/index.html#what-to-expect",
+    "href": "blog/posts/2025/01/welcome/index.html#what-to-expect",
+    "title": "Welcome to My Blog",
+    "section": "What to Expect",
+    "text": "What to Expect\nI’ll be sharing updates on projects, learnings, and thoughts here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health Kowshik",
+    "section": "",
+    "text": "Blog – Updates on projects and longer-form writing\nToday I Learned (TIL) – Short notes on things I learn day to day\nWiki – Reference guides and repeatable instructions",
+    "crumbs": [
+      "Home",
+      "Health Kowshik"
+    ]
+  },
+  {
+    "objectID": "index.html#sections",
+    "href": "index.html#sections",
+    "title": "Health Kowshik",
+    "section": "",
+    "text": "Blog – Updates on projects and longer-form writing\nToday I Learned (TIL) – Short notes on things I learn day to day\nWiki – Reference guides and repeatable instructions",
+    "crumbs": [
+      "Home",
+      "Health Kowshik"
+    ]
+  },
+  {
+    "objectID": "wiki/index.html",
+    "href": "wiki/index.html",
+    "title": "Wiki",
+    "section": "",
+    "text": "Reference guides and repeatable instructions."
+  },
+  {
+    "objectID": "wiki/index.html#contents",
+    "href": "wiki/index.html#contents",
+    "title": "Wiki",
+    "section": "Contents",
+    "text": "Contents\n\nnbdev2 – Create delightful software with Jupyter Notebooks"
+  },
+  {
+    "objectID": "til/index.html",
+    "href": "til/index.html",
+    "title": "Today I Learned",
+    "section": "",
+    "text": "Short notes on things I learn day to day.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nCategories\n\n\n\n\n\n\n\n\nJan 15, 2025\n\n\nSample TIL Entry\n\n\npython\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "til/2025/01/sample-til.html",
+    "href": "til/2025/01/sample-til.html",
+    "title": "Sample TIL Entry",
+    "section": "",
+    "text": "This is a sample TIL entry. Replace this with your actual learnings.\n# Example code snippet\nprint(\"Hello, World!\")"
+  },
+  {
+    "objectID": "til/2025/01/sample-til.html#the-learning",
+    "href": "til/2025/01/sample-til.html#the-learning",
+    "title": "Sample TIL Entry",
+    "section": "",
+    "text": "This is a sample TIL entry. Replace this with your actual learnings.\n# Example code snippet\nprint(\"Hello, World!\")"
+  },
+  {
+    "objectID": "wiki/nbdev.html",
+    "href": "wiki/nbdev.html",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "",
+    "text": "nbdev_export      # Convert notebooks → Python modules\nnbdev_test        # Run tests from notebooks\nnbdev_clean       # Clean outputs/metadata\nnbdev_docs        # Build documentation\nnbdev_preview     # Preview docs locally\nnbdev_readme      # Update README from index.ipynb"
+  },
+  {
+    "objectID": "wiki/nbdev.html#essential-commands",
+    "href": "wiki/nbdev.html#essential-commands",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "",
+    "text": "nbdev_export      # Convert notebooks → Python modules\nnbdev_test        # Run tests from notebooks\nnbdev_clean       # Clean outputs/metadata\nnbdev_docs        # Build documentation\nnbdev_preview     # Preview docs locally\nnbdev_readme      # Update README from index.ipynb"
+  },
+  {
+    "objectID": "wiki/nbdev.html#cleanup-script",
+    "href": "wiki/nbdev.html#cleanup-script",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "Cleanup Script",
+    "text": "Cleanup Script\nFull rebuild from scratch. Clears all generated files (_docs, _proc, .quarto), Python artifacts, then regenerates everything.\n./cleanup.sh\nUse when:\n\n.qmd files aren’t updating (nbdev doesn’t overwrite existing .qmd in _proc)\nSwitching branches with different content\nListings show stale/duplicate entries"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Updates on projects, learnings, and thoughts.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 15, 2025\n\n\nHealth Kowshik\n\n\n\n\n\nNo matching items"
+  }
+]

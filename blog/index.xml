@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>healthkowshik</title>
+<link>https://healthkowshik.github.io/healthkowshik.github.io/blog/</link>
+<atom:link href="https://healthkowshik.github.io/healthkowshik.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Journey of Health Kowshik</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Wed, 15 Jan 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Welcome to My Blog</title>
+  <dc:creator>Health Kowshik</dc:creator>
+  <link>https://healthkowshik.github.io/healthkowshik.github.io/blog/posts/2025/01/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is my first blog post. Welcome!</p>
+<section id="what-to-expect" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-expect">What to Expect</h2>
+<p>I’ll be sharing updates on projects, learnings, and thoughts here.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://healthkowshik.github.io/healthkowshik.github.io/blog/posts/2025/01/welcome/</guid>
+  <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
