@@ -5,4 +5,4 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://healthkowshik.github.io',
                 'git_url': 'https://github.com/healthkowshik/healthkowshik.github.io',
                 'lib_path': 'healthkowshik'},
-  'syms': {'healthkowshik.core': {'healthkowshik.core.foo': ('core.html#foo', 'healthkowshik/core.py')}}}
+  'syms': {}}
