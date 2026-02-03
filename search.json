@@ -1,0 +1,101 @@
+[
+  {
+    "objectID": "blog/posts/2025/01/welcome/index.html",
+    "href": "blog/posts/2025/01/welcome/index.html",
+    "title": "Welcome to My Blog",
+    "section": "",
+    "text": "This is my first blog post. Welcome!"
+  },
+  {
+    "objectID": "blog/posts/2025/01/welcome/index.html#what-to-expect",
+    "href": "blog/posts/2025/01/welcome/index.html#what-to-expect",
+    "title": "Welcome to My Blog",
+    "section": "What to Expect",
+    "text": "What to Expect\nI’ll be sharing updates on projects, learnings, and thoughts here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Health Kowshik",
+    "section": "",
+    "text": "Blog – Updates on projects and longer-form writing\nToday I Learned (TIL) – Short notes on things I learn day to day\nWiki – Reference guides and repeatable instructions",
+    "crumbs": [
+      "Home",
+      "Health Kowshik"
+    ]
+  },
+  {
+    "objectID": "index.html#sections",
+    "href": "index.html#sections",
+    "title": "Health Kowshik",
+    "section": "",
+    "text": "Blog – Updates on projects and longer-form writing\nToday I Learned (TIL) – Short notes on things I learn day to day\nWiki – Reference guides and repeatable instructions",
+    "crumbs": [
+      "Home",
+      "Health Kowshik"
+    ]
+  },
+  {
+    "objectID": "wiki/index.html",
+    "href": "wiki/index.html",
+    "title": "Wiki",
+    "section": "",
+    "text": "Reference guides and repeatable instructions."
+  },
+  {
+    "objectID": "wiki/index.html#contents",
+    "href": "wiki/index.html#contents",
+    "title": "Wiki",
+    "section": "Contents",
+    "text": "Contents\n\nnbdev2 – Create delightful software with Jupyter Notebooks"
+  },
+  {
+    "objectID": "til/2026/02/2026-02-03.html",
+    "href": "til/2026/02/2026-02-03.html",
+    "title": "Pre-commit with Docker and Multi-Project Monorepos",
+    "section": "",
+    "text": "Pre-commit is designed to run on the host machine, not inside Docker containers. In monorepos like open-wearables with multiple Python projects (e.g., backend + MCP), each project needs its own virtualenv for local hooks that use project-specific tools like ty.\n\n\n\nGit access — Pre-commit installs into .git/hooks/pre-commit and needs the .git directory, which typically isn’t mounted in containers.\nRepo-wide scope — Hooks may check both backend/ and mcp/, but the app container often only has backend code, so it can’t run the full pre-commit setup.\n\nRecommended: Run pre-commit on the host. Ex:\ncd open-wearables\nuv run pre-commit run --all-files\n\n\n\nWith repository local hooks, each hook can use its own .venv:\n# .pre-commit-config.yaml\n- repo: local\n  hooks:\n    - id: ty-backend\n      name: ty check (backend)\n      entry: sh -c 'cd backend && .venv/bin/ty check .'\n      language: system\n      files: ^backend/.*\\.py$\n\n    - id: ty-mcp\n      name: ty check (mcp)\n      entry: sh -c 'cd mcp && .venv/bin/ty check .'\n      language: system\n      files: ^mcp/.*\\.py$\nEach project (backend, mcp) has its own isolated venv; pre-commit invokes .venv/bin/ty directly—no need to activate them manually.\n\n\n\nIf the MCP venv doesn’t exist yet, create it:\n# 1. Backend venv (if needed)\ncd backend && uv sync --group code-quality\n\n# 2. MCP venv\ncd mcp && uv sync --group code-quality\n\n# 3. Run pre-commit from repo root\ncd open-wearables\nuv run pre-commit run --all-files\nWhy --group code-quality? Each project’s pyproject.toml defines a code-quality dependency group containing pre-commit, ruff, and ty. By default, uv sync only installs main dependencies and the dev group—it skips other groups. Without --group code-quality, ty (and the other code-quality tools) won’t be installed, so .venv/bin/ty won’t exist and the pre-commit hooks will fail.\n\n\n\nPre-commit and its hooks should run on the host. Use uv sync --group code-quality in each project to create the venvs that local hooks expect."
+  },
+  {
+    "objectID": "til/2026/02/2026-02-03.html#the-learning",
+    "href": "til/2026/02/2026-02-03.html#the-learning",
+    "title": "Pre-commit with Docker and Multi-Project Monorepos",
+    "section": "",
+    "text": "Pre-commit is designed to run on the host machine, not inside Docker containers. In monorepos like open-wearables with multiple Python projects (e.g., backend + MCP), each project needs its own virtualenv for local hooks that use project-specific tools like ty.\n\n\n\nGit access — Pre-commit installs into .git/hooks/pre-commit and needs the .git directory, which typically isn’t mounted in containers.\nRepo-wide scope — Hooks may check both backend/ and mcp/, but the app container often only has backend code, so it can’t run the full pre-commit setup.\n\nRecommended: Run pre-commit on the host. Ex:\ncd open-wearables\nuv run pre-commit run --all-files\n\n\n\nWith repository local hooks, each hook can use its own .venv:\n# .pre-commit-config.yaml\n- repo: local\n  hooks:\n    - id: ty-backend\n      name: ty check (backend)\n      entry: sh -c 'cd backend && .venv/bin/ty check .'\n      language: system\n      files: ^backend/.*\\.py$\n\n    - id: ty-mcp\n      name: ty check (mcp)\n      entry: sh -c 'cd mcp && .venv/bin/ty check .'\n      language: system\n      files: ^mcp/.*\\.py$\nEach project (backend, mcp) has its own isolated venv; pre-commit invokes .venv/bin/ty directly—no need to activate them manually.\n\n\n\nIf the MCP venv doesn’t exist yet, create it:\n# 1. Backend venv (if needed)\ncd backend && uv sync --group code-quality\n\n# 2. MCP venv\ncd mcp && uv sync --group code-quality\n\n# 3. Run pre-commit from repo root\ncd open-wearables\nuv run pre-commit run --all-files\nWhy --group code-quality? Each project’s pyproject.toml defines a code-quality dependency group containing pre-commit, ruff, and ty. By default, uv sync only installs main dependencies and the dev group—it skips other groups. Without --group code-quality, ty (and the other code-quality tools) won’t be installed, so .venv/bin/ty won’t exist and the pre-commit hooks will fail.\n\n\n\nPre-commit and its hooks should run on the host. Use uv sync --group code-quality in each project to create the venvs that local hooks expect."
+  },
+  {
+    "objectID": "til/index.html",
+    "href": "til/index.html",
+    "title": "Today I Learned",
+    "section": "",
+    "text": "Short notes on things I learn day to day.\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nCategories\n\n\n\n\n\n\n\n\nFeb 3, 2026\n\n\nPre-commit with Docker and Multi-Project Monorepos\n\n\npython, pre-commit, docker, uv\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "wiki/nbdev.html",
+    "href": "wiki/nbdev.html",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "",
+    "text": "nbdev_export      # Convert notebooks → Python modules\nnbdev_test        # Run tests from notebooks\nnbdev_clean       # Clean outputs/metadata\nnbdev_docs        # Build documentation\nnbdev_preview     # Preview docs locally\nnbdev_readme      # Update README from index.ipynb"
+  },
+  {
+    "objectID": "wiki/nbdev.html#essential-commands",
+    "href": "wiki/nbdev.html#essential-commands",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "",
+    "text": "nbdev_export      # Convert notebooks → Python modules\nnbdev_test        # Run tests from notebooks\nnbdev_clean       # Clean outputs/metadata\nnbdev_docs        # Build documentation\nnbdev_preview     # Preview docs locally\nnbdev_readme      # Update README from index.ipynb"
+  },
+  {
+    "objectID": "wiki/nbdev.html#cleanup-script",
+    "href": "wiki/nbdev.html#cleanup-script",
+    "title": "nbdev2 – Create delightful software with Jupyter Notebooks",
+    "section": "Cleanup Script",
+    "text": "Cleanup Script\nFull rebuild from scratch. Clears all generated files (_docs, _proc, .quarto), Python artifacts, then regenerates everything.\n./cleanup.sh\nUse when:\n\n.qmd files aren’t updating (nbdev doesn’t overwrite existing .qmd in _proc)\nSwitching branches with different content\nListings show stale/duplicate entries"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Updates on projects, learnings, and thoughts.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome to My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJan 15, 2025\n\n\nHealth Kowshik\n\n\n\n\n\nNo matching items"
+  }
+]
